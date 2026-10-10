@@ -1,0 +1,105 @@
+:root {
+  --paper: #e6dfd2;
+  --card: #fbf7f0;
+  --ink: #1c1915;
+  --muted: #5e564c;
+  --line: #d4cbbd;
+  --accent: #9a3412;
+  --accent-ink: #fffaf5;
+  --good: #3f6212;
+  --bad: #9f1239;
+  --warn: #92400e;
+  --shadow: 0 18px 40px rgba(58, 42, 24, 0.08);
+  font-family: "Liberation Sans", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3, .mark { font-family: "Liberation Serif", Georgia, serif; font-weight: 700; }
+
+.shell { max-width: 980px; margin: 0 auto; padding: 32px 20px 72px; }
+.mast { margin-bottom: 22px; }
+.mark { letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; margin: 0 0 8px; color: var(--accent); }
+h1 { font-size: 40px; line-height: 1.05; margin: 0 0 10px; max-width: 16ch; }
+.lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 17px; }
+
+.steps { display: flex; gap: 8px; list-style: none; padding: 0; margin: 22px 0; }
+.steps li { flex: 1; border-top: 2px solid var(--line); padding-top: 8px; color: var(--muted); font-size: 13px; }
+.steps li.active { border-color: var(--accent); color: var(--ink); font-weight: 700; }
+.steps li.done { border-color: var(--good); }
+
+.banner { border: 1px solid var(--bad); background: #fff1f2; color: #881337; padding: 12px 14px; margin-bottom: 16px; }
+.banner strong { display: block; margin-bottom: 4px; }
+.banner.warn { border-color: var(--warn); background: #fffbeb; color: #78350f; }
+.banner.good { border-color: var(--good); background: #f7fee7; color: #3f6212; }
+
+.card { background: var(--card); border: 1px solid var(--line); box-shadow: var(--shadow); padding: 22px; }
+.card + .card { margin-top: 14px; }
+h2 { margin: 0 0 6px; font-size: 28px; }
+.hint { color: var(--muted); margin: 0 0 16px; }
+
+label { display: block; font-size: 13px; font-weight: 700; margin: 12px 0 6px; }
+textarea, input[type="text"], input[type="password"], input[type="email"] {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 10px 12px;
+  border-radius: 0;
+}
+textarea { min-height: 140px; resize: vertical; }
+.job { min-height: 180px; }
+
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+button.primary, button.secondary, button.ghost, a.secondary {
+  border: 1px solid var(--ink);
+  padding: 10px 14px;
+  background: transparent;
+}
+a.secondary { display: inline-block; text-decoration: none; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button.secondary { background: var(--ink); color: var(--card); }
+button.ghost { border-color: var(--line); }
+button:disabled { opacity: 0.55; cursor: wait; }
+
+.file {
+  border: 1px dashed var(--accent);
+  padding: 16px;
+  background: #fff;
+}
+.choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.choices label {
+  border: 1px solid var(--line);
+  padding: 10px;
+  margin: 0;
+  font-weight: 600;
+  background: #fff;
+}
+.choices input { margin-right: 6px; }
+
+.entry { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 12px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.repo, .project {
+  border: 1px solid var(--line);
+  padding: 12px;
+  margin-top: 10px;
+  background: #fff;
+}
+.repo header, .project header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+.tag { font-size: 12px; border: 1px solid var(--line); padding: 2px 6px; }
+.tag.private { border-color: var(--accent); color: var(--accent); }
+.tag.ok { border-color: var(--good); color: var(--good); }
+.evidence { color: var(--muted); font-size: 14px; margin: 6px 0 0; }
+.check { font-weight: 600; display: flex; gap: 8px; align-items: flex-start; margin-top: 8px; }
+.check input { margin-top: 3px; }
+
+@media (max-width: 720px) {
+  h1 { font-size: 32px; }
+  .choices, .grid { grid-template-columns: 1fr; }
+  .steps { overflow-x: auto; }
+  .steps li { min-width: 72px; }
+}
