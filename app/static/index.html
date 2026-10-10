@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ImposterApply</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="mast">
+      <p class="mark">ImposterApply</p>
+      <h1>A resume for the role, not a new biography.</h1>
+      <p class="lede">Enter a GitHub user ID. The app reads every public repository and writes a short map from the README and code, then matches that map to a job.</p>
+    </header>
+    <ol class="steps" id="steps" aria-label="Progress">
+      <li data-step="1">GitHub</li>
+      <li data-step="2">Role</li>
+      <li data-step="3">Facts</li>
+      <li data-step="4">Draft</li>
+    </ol>
+    <div id="banner" class="banner" hidden></div>
+    <main id="main"></main>
+  </div>
+  <script src="/static/app.js?v=6"></script>
+</body>
+</html>
