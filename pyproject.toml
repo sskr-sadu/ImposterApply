@@ -1,0 +1,24 @@
+[project]
+name = "imposterapply"
+version = "0.1.0"
+description = "Role-specific resumes grounded in a resume PDF and permitted GitHub repositories."
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.115",
+  "httpx>=0.27",
+  "pypdf>=5.1",
+  "python-multipart>=0.0.12",
+  "reportlab>=4.2",
+  "uvicorn>=0.32",
+]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
